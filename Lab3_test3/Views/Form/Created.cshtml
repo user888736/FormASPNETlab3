@@ -1,0 +1,17 @@
+﻿@model Lab3_test3.Models.FormModel
+@{
+    ViewData["Title"] = "Form-Created";
+
+    string userName = Model.Name;
+    int repeatNum = Int32.Parse(Model.Description);
+
+}
+
+<div class="text-left">
+    <h1 class="display-4">Dane z formularza</h1>
+    @Html.DisplayNameFor(model => model.Name):          @{ for (int i = 0; i < repeatNum; i++) { @Html.DisplayFor(model => model.Name)}}
+    <br />
+    @Html.DisplayNameFor(model => model.Description):   @Html.DisplayFor(model => model.Description)
+
+</div>
+<p>Dziękujemy za wypełnienie formularza.</p>
